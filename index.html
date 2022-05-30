@@ -12,6 +12,21 @@
   <title>Conversor de Moedas</title>
 
   <link rel="stylesheet" href="./styles/index.css">
+  <script>
+    var myHeaders = new Headers();
+    myHeaders.append("apikey", "elA46ALpleyVUGhmYoHlSjF5Pbel3RxS");
+
+    var requestOptions = {
+      method: 'GET',
+      redirect: 'follow',
+      headers: myHeaders
+    };
+
+    fetch("https://api.apilayer.com/currency_data/convert?to=STD&from=EUR&amount=5", requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+  </script>
 </head>
 
 <body>
@@ -22,23 +37,22 @@
       <form class="wrapper-coin">
         <input class="coin" type="number" />
         <select class="list-coins">
-          <option value="euro">Euro</option>
-          <option value="dobra">Dobra</option>
+          <option value="euro">Euro(EUR)</option>
+          <option value="dobra">Dobra(STD)</option>
         </select>
       </form>
       <span class="comparator">=</span>
       <form class="wrapper-coin">
         <input class="coin" type="number" />
         <select class="list-coins">
-          <option value="euro">Euro</option>
-          <option value="dobra">Dobra</option>
+          <option value="euro">Euro(EUR)</option>
+          <option value="dobra">Dobra(STD)</option>
         </select>
       </form>
     </section>
 
   </main>
 
-  <script type="module" src="/main.js"></script>
-</body>
-
-</html>
+  <script type="module" src="/main.js"></script >
+</body >
+</html >
